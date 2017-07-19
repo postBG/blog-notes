@@ -16,7 +16,6 @@
 
 * [Deep Learning, NLP, and Representations](http://colah.github.io/posts/2014-07-NLP-RNNs-Representations/)
 
-  ​
 
 
 ### 2017-07-19
