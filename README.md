@@ -39,3 +39,20 @@
 ### 2017-07-26
 
 - [UI/UX 디자인의 기본 5](http://www.fastcampus.co.kr/dgn_school_uds_blog_20170109/)
+
+### 2017-08-01
+
+* [Grokking RxJava1](http://blog.danlew.net/2014/09/15/grokking-rxjava-part-1/)
+
+### 2017-08-02
+
+* [Grokking RxJava2](http://blog.danlew.net/2014/09/22/grokking-rxjava-part-2/)
+
+### 2017-08-03
+
+* [Grokking RxJava3](http://blog.danlew.net/2014/09/30/grokking-rxjava-part-3/)
+
+### 2017-08-04
+
+* [Tensorflow Best Practice](https://wookayin.github.io/TensorFlowKR-2017-talk-bestpractice/ko/#3)
+
