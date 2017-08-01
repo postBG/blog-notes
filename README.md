@@ -43,6 +43,7 @@
 ### 2017-08-01
 
 * [Grokking RxJava1](http://blog.danlew.net/2014/09/15/grokking-rxjava-part-1/)
+* [Understanding Xavier Initialization In Deep Neural Networks](https://prateekvjoshi.com/2016/03/29/understanding-xavier-initialization-in-deep-neural-networks/)
 
 ### 2017-08-02
 
