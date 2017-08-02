@@ -7,6 +7,9 @@
 ### TODO
 
 * [Deep Learning, NLP, and Representations](http://colah.github.io/posts/2014-07-NLP-RNNs-Representations/)
+* [Grokking RxJava1](http://blog.danlew.net/2014/09/15/grokking-rxjava-part-1/)
+* [Grokking RxJava2](http://blog.danlew.net/2014/09/22/grokking-rxjava-part-2/)
+* [Grokking RxJava3](http://blog.danlew.net/2014/09/30/grokking-rxjava-part-3/)
 
 ### 2017-07-17
 
@@ -42,16 +45,11 @@
 
 ### 2017-08-01
 
-* [Grokking RxJava1](http://blog.danlew.net/2014/09/15/grokking-rxjava-part-1/)
-* [Understanding Xavier Initialization In Deep Neural Networks](https://prateekvjoshi.com/2016/03/29/understanding-xavier-initialization-in-deep-neural-networks/)
-
-### 2017-08-02
-
-* [Grokking RxJava2](http://blog.danlew.net/2014/09/22/grokking-rxjava-part-2/)
+* [Understanding Xavier Initialization In Deep Neural Networks](https://prateekvjoshi.com/2016/03/29/understanding-xavier-initialization-in-deep-neural-networks/)[[notes](notes/Understanding_Xavier_Initialization_In_deep_neural_networks.md)]
 
 ### 2017-08-03
 
-* [Grokking RxJava3](http://blog.danlew.net/2014/09/30/grokking-rxjava-part-3/)
+* [Rest worst practice](https://jacobian.org/writing/rest-worst-practices/)
 
 ### 2017-08-04
 
