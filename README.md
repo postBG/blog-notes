@@ -7,6 +7,7 @@
 ### TODO
 
 * [Deep Learning, NLP, and Representations](http://colah.github.io/posts/2014-07-NLP-RNNs-Representations/)
+* [Tensorflow Best Practice](https://wookayin.github.io/TensorFlowKR-2017-talk-bestpractice/ko/#3)
 * [Grokking RxJava1](http://blog.danlew.net/2014/09/15/grokking-rxjava-part-1/)
 * [Grokking RxJava2](http://blog.danlew.net/2014/09/22/grokking-rxjava-part-2/)
 * [Grokking RxJava3](http://blog.danlew.net/2014/09/30/grokking-rxjava-part-3/)
@@ -51,7 +52,12 @@
 
 * [Rest worst practice](https://jacobian.org/writing/rest-worst-practices/)
 
-### 2017-08-04
+### 2017-08-05
 
-* [Tensorflow Best Practice](https://wookayin.github.io/TensorFlowKR-2017-talk-bestpractice/ko/#3)
+* [The Key To Accelerating Your Coding Skills](http://blog.thefirehoseproject.com/posts/learn-to-code-and-be-self-reliant/)
+
+
+### 2017-08-06
+
+* [9 things every React.js beginner should know](https://camjackson.net/post/9-things-every-reactjs-beginner-should-know)
 
