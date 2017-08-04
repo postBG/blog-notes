@@ -6,11 +6,15 @@
 
 ### TODO
 
-* [Deep Learning, NLP, and Representations](http://colah.github.io/posts/2014-07-NLP-RNNs-Representations/)
-* [Tensorflow Best Practice](https://wookayin.github.io/TensorFlowKR-2017-talk-bestpractice/ko/#3)
-* [Grokking RxJava1](http://blog.danlew.net/2014/09/15/grokking-rxjava-part-1/)
-* [Grokking RxJava2](http://blog.danlew.net/2014/09/22/grokking-rxjava-part-2/)
-* [Grokking RxJava3](http://blog.danlew.net/2014/09/30/grokking-rxjava-part-3/)
+* Deep Learning
+  * [Deep Learning, NLP, and Representations](http://colah.github.io/posts/2014-07-NLP-RNNs-Representations/)
+  * [Tensorflow Best Practice](https://wookayin.github.io/TensorFlowKR-2017-talk-bestpractice/ko/#3)
+* Reactive Programming
+  * [Grokking RxJava1](http://blog.danlew.net/2014/09/15/grokking-rxjava-part-1/)
+  * [Grokking RxJava2](http://blog.danlew.net/2014/09/22/grokking-rxjava-part-2/)
+  * [Grokking RxJava3](http://blog.danlew.net/2014/09/30/grokking-rxjava-part-3/)
+* Frontend Development
+  * [React Best Practices and Useful Functions](https://medium.com/@nesbtesh/react-best-practices-a76fd0fbef21)
 
 ### 2017-07-17
 
@@ -60,4 +64,3 @@
 ### 2017-08-06
 
 * [9 things every React.js beginner should know](https://camjackson.net/post/9-things-every-reactjs-beginner-should-know)
-
