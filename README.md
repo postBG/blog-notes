@@ -64,3 +64,9 @@
 ### 2017-08-06
 
 * [9 things every React.js beginner should know](https://camjackson.net/post/9-things-every-reactjs-beginner-should-know)
+
+### 2017-08-25
+
+* [Isomorphic JavaScript: The Future of Web Apps](https://medium.com/airbnb-engineering/isomorphic-javascript-the-future-of-web-apps-10882b7a2ebc)[[notes](notes/Isomorphic_JavaScript.md)]
+
+  ​
