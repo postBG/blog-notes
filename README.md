@@ -2,7 +2,7 @@
 
 :notebook:Personal notes of blogs
 
-하루에 하나의 블로그를 읽고, 필요하면 노트를 작성해야지:)
+하루에 하나의 블로그를 읽고, 필요하면 노트를 작성해야지:) ~~넌 그게 가능할 거 같니~~
 
 ### TODO
 
@@ -15,6 +15,8 @@
   * [Grokking RxJava3](http://blog.danlew.net/2014/09/30/grokking-rxjava-part-3/)
 * Frontend Development
   * [React Best Practices and Useful Functions](https://medium.com/@nesbtesh/react-best-practices-a76fd0fbef21)
+* Get that Job
+  * [Get that job at google](http://steve-yegge.blogspot.kr/2008/03/get-that-job-at-google.html)
 
 ### 2017-07-17
 
@@ -69,4 +71,7 @@
 
 * [Isomorphic JavaScript: The Future of Web Apps](https://medium.com/airbnb-engineering/isomorphic-javascript-the-future-of-web-apps-10882b7a2ebc)[[notes](notes/Isomorphic_JavaScript.md)]
 
-  ​
+### 2017-09-08
+
+* [5 Skills You Need to Become a Machine Learning Engineer](https://blog.udacity.com/2016/04/5-skills-you-need-to-become-a-machine-learning-engineer.html)[[note](notes/5_Skills_you_need_to_become_a_machine_learning_engineer)]
+
