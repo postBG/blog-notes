@@ -26,7 +26,7 @@
 
 ### 2017-07-18
 
-* [소셜 네트워크 서비스의 아키텍쳐에 대하여](http://d2.naver.com/helloworld/551588)[[notes](notes/소셜_네트워크_서비스의_아키텍쳐에_대하여.md)]
+* [소셜 네트워크 서비스의 아키텍쳐에 대하여](http://d2.naver.com/helloworld/551588)[[note](notes/소셜_네트워크_서비스의_아키텍쳐에_대하여.md)]
 
 
 ### 2017-07-19
@@ -52,7 +52,7 @@
 
 ### 2017-08-01
 
-* [Understanding Xavier Initialization In Deep Neural Networks](https://prateekvjoshi.com/2016/03/29/understanding-xavier-initialization-in-deep-neural-networks/)[[notes](notes/Understanding_Xavier_Initialization_In_deep_neural_networks.md)]
+* [Understanding Xavier Initialization In Deep Neural Networks](https://prateekvjoshi.com/2016/03/29/understanding-xavier-initialization-in-deep-neural-networks/)[[note](notes/Understanding_Xavier_Initialization_In_deep_neural_networks.md)]
 
 ### 2017-08-03
 
@@ -69,9 +69,14 @@
 
 ### 2017-08-25
 
-* [Isomorphic JavaScript: The Future of Web Apps](https://medium.com/airbnb-engineering/isomorphic-javascript-the-future-of-web-apps-10882b7a2ebc)[[notes](notes/Isomorphic_JavaScript.md)]
+* [Isomorphic JavaScript: The Future of Web Apps](https://medium.com/airbnb-engineering/isomorphic-javascript-the-future-of-web-apps-10882b7a2ebc)[[note](notes/Isomorphic_JavaScript.md)]
 
 ### 2017-09-08
 
-* [5 Skills You Need to Become a Machine Learning Engineer](https://blog.udacity.com/2016/04/5-skills-you-need-to-become-a-machine-learning-engineer.html)[[note](notes/5_Skills_you_need_to_become_a_machine_learning_engineer)]
+* [5 Skills You Need to Become a Machine Learning Engineer](https://blog.udacity.com/2016/04/5-skills-you-need-to-become-a-machine-learning-engineer.html)[[note](notes/5_Skills_you_need_to_become_a_machine_learning_engineer.md)]
+
+
+### 2017-10-11
+
+* [Finding Beautiful Yelp Photos Using Deep Learning](https://engineeringblog.yelp.com/2016/11/finding-beautiful-yelp-photos-using-deep-learning.html)[[note](/notes/Finding_Beautiful_Yelp_Photos_Using_Deep_Learning.md)]
 
