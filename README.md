@@ -20,15 +20,20 @@
 
 
 
+
 ### 2017 Oct.
 
 * [Finding Beautiful Yelp Photos Using Deep Learning](https://engineeringblog.yelp.com/2016/11/finding-beautiful-yelp-photos-using-deep-learning.html)[[note](/notes/Finding_Beautiful_Yelp_Photos_Using_Deep_Learning.md)]
+* [Thoughts on Machine Learning – Dealing with Skewed Classes](https://florianhartl.com/thoughts-on-machine-learning-dealing-with-skewed-classes.html)
+* [Class Imbalance Problem](http://www.chioka.in/class-imbalance-problem/)
+
 
 
 
 ### 2017 Sep.
 
 * [5 Skills You Need to Become a Machine Learning Engineer](https://blog.udacity.com/2016/04/5-skills-you-need-to-become-a-machine-learning-engineer.html)[[note](notes/5_Skills_you_need_to_become_a_machine_learning_engineer.md)]
+
 
 
 
@@ -47,6 +52,7 @@
 
 
 - [Isomorphic JavaScript: The Future of Web Apps](https://medium.com/airbnb-engineering/isomorphic-javascript-the-future-of-web-apps-10882b7a2ebc)[[note](notes/Isomorphic_JavaScript.md)]
+
 
 
 
