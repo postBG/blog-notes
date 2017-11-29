@@ -21,6 +21,12 @@
 
 
 
+### 2017 Nov.
+
+* [Attention and Memory in Deep Learning and NLP](http://www.wildml.com/2016/01/attention-and-memory-in-deep-learning-and-nlp/)[[note](notes/Attention_and_Memory.md)]
+
+
+
 ### 2017 Oct.
 
 * [Finding Beautiful Yelp Photos Using Deep Learning](https://engineeringblog.yelp.com/2016/11/finding-beautiful-yelp-photos-using-deep-learning.html)[[note](/notes/Finding_Beautiful_Yelp_Photos_Using_Deep_Learning.md)]
