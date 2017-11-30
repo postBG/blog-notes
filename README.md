@@ -8,6 +8,7 @@
 
 * Deep Learning
   * [Deep Learning, NLP, and Representations](http://colah.github.io/posts/2014-07-NLP-RNNs-Representations/)
+  * [Visual Attention Model in Deep Learning](https://towardsdatascience.com/visual-attention-model-in-deep-learning-708813c2912c)
   * [Tensorflow Best Practice](https://wookayin.github.io/TensorFlowKR-2017-talk-bestpractice/ko/#3)
 * Reactive Programming
   * [Grokking RxJava1](http://blog.danlew.net/2014/09/15/grokking-rxjava-part-1/)
