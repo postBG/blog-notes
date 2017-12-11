@@ -25,19 +25,22 @@
 
 * [Recurrent Models of Visual Attention (NIPS 2014)](http://sanghyukchun.github.io/91/)
 * [Visual Attention Model in Deep Learning](https://towardsdatascience.com/visual-attention-model-in-deep-learning-708813c2912c)
+* [Image Classification](http://cs231n.github.io/classification/)
+* [Linear Classification](http://cs231n.github.io/linear-classify/)[[note](notes/Linear_Classification.md)]
+
 
 
 
 ### 2017 Nov.
 
-* [Attention and Memory in Deep Learning and NLP](http://www.wildml.com/2016/01/attention-and-memory-in-deep-learning-and-nlp/) [[note](notes/Attention_and_Memory.md)]
+* [Attention and Memory in Deep Learning and NLP](http://www.wildml.com/2016/01/attention-and-memory-in-deep-learning-and-nlp/)[[note](notes/Attention_and_Memory.md)]
 
 
 
 
 ### 2017 Oct.
 
-* [Finding Beautiful Yelp Photos Using Deep Learning](https://engineeringblog.yelp.com/2016/11/finding-beautiful-yelp-photos-using-deep-learning.html) [[note](/notes/Finding_Beautiful_Yelp_Photos_Using_Deep_Learning.md)]
+* [Finding Beautiful Yelp Photos Using Deep Learning](https://engineeringblog.yelp.com/2016/11/finding-beautiful-yelp-photos-using-deep-learning.html)[[note](/notes/Finding_Beautiful_Yelp_Photos_Using_Deep_Learning.md)]
 * [Thoughts on Machine Learning – Dealing with Skewed Classes](https://florianhartl.com/thoughts-on-machine-learning-dealing-with-skewed-classes.html)
 * [Class Imbalance Problem](http://www.chioka.in/class-imbalance-problem/) [[note](notes/Class_Imbalance_problem.md)]
 
@@ -46,14 +49,14 @@
 
 ### 2017 Sep.
 
-* [5 Skills You Need to Become a Machine Learning Engineer](https://blog.udacity.com/2016/04/5-skills-you-need-to-become-a-machine-learning-engineer.html) [[note](notes/5_Skills_you_need_to_become_a_machine_learning_engineer.md)]
+* [5 Skills You Need to Become a Machine Learning Engineer](https://blog.udacity.com/2016/04/5-skills-you-need-to-become-a-machine-learning-engineer.html)[[note](notes/5_Skills_you_need_to_become_a_machine_learning_engineer.md)]
 
 
 
 
 ### 2017 Aug.
 
-- [Understanding Xavier Initialization In Deep Neural Networks](https://prateekvjoshi.com/2016/03/29/understanding-xavier-initialization-in-deep-neural-networks/) [[note](notes/Understanding_Xavier_Initialization_In_deep_neural_networks.md)]
+- [Understanding Xavier Initialization In Deep Neural Networks](https://prateekvjoshi.com/2016/03/29/understanding-xavier-initialization-in-deep-neural-networks/)[[note](notes/Understanding_Xavier_Initialization_In_deep_neural_networks.md)]
 
 
 - [Rest worst practice](https://jacobian.org/writing/rest-worst-practices/)
@@ -65,7 +68,7 @@
 - [9 things every React.js beginner should know](https://camjackson.net/post/9-things-every-reactjs-beginner-should-know)
 
 
-- [Isomorphic JavaScript: The Future of Web Apps](https://medium.com/airbnb-engineering/isomorphic-javascript-the-future-of-web-apps-10882b7a2ebc) [[note](notes/Isomorphic_JavaScript.md)]
+- [Isomorphic JavaScript: The Future of Web Apps](https://medium.com/airbnb-engineering/isomorphic-javascript-the-future-of-web-apps-10882b7a2ebc)[[note](notes/Isomorphic_JavaScript.md)]
 
 
 
