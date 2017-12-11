@@ -9,7 +9,7 @@
 
 
 
-### Linear Classification의 해석
+### Linear Classification
 
 #### 0. Linear Classification
 
@@ -23,6 +23,8 @@ image를 하나의 점으로 보면 Linear Classification의 결과는 이 점�
 
 ![interpret_high_dim](assets/Linear_Classification/interpret_high_dim.PNG)
 
+
+
 #### 2. Interpretation of Linear Classifiers as template matching 
 
 **W**의 각 row는 해당 class의 *template(=prototype)*에 해당하며 score of class를 계산한다는 것은 이 template과 data를 inner product를 통해 비교한다는 것. 
@@ -32,3 +34,15 @@ image를 하나의 점으로 보면 Linear Classification의 결과는 이 점�
 ![](assets/Linear_Classification/template.PNG)
 
 위의 사진을 보면 horse같은 경우에 양방향의 머리를 가진 말처럼 보이는데, 이는 두 방향의 말을 모두 찾기 위해서이다. ship같은 경우에도 주위가 바다인 경우가 많아 테두리가 파란색이다.
+
+
+
+### 3. Bias trick
+
+![](assets/Linear_Classification/bias_trick.PNG)
+
+
+
+#### 4. Image Data Processing
+
+이미지 데이터를 다룰 경우 zero mean centering (range [-1, 1])로 해주는 것이 좋다. 이는 이후에 배울 gradient descent의 동작을 배우면 알 수 있음.
