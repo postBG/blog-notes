@@ -25,8 +25,9 @@
 
 * [Recurrent Models of Visual Attention (NIPS 2014)](http://sanghyukchun.github.io/91/)
 * [Visual Attention Model in Deep Learning](https://towardsdatascience.com/visual-attention-model-in-deep-learning-708813c2912c)
-* [Image Classification](http://cs231n.github.io/classification/)
-* [Linear Classification](http://cs231n.github.io/linear-classify/)[[note](notes/Linear_Classification.md)]
+* [(CS231n) Image Classification](http://cs231n.github.io/classification/)
+* [(CS231n) Linear Classification](http://cs231n.github.io/linear-classify/)[[note](notes/Linear_Classification.md)]
+* [Deep Learning Glossary](http://www.wildml.com/deep-learning-glossary/)
 
 
 
@@ -42,7 +43,7 @@
 
 * [Finding Beautiful Yelp Photos Using Deep Learning](https://engineeringblog.yelp.com/2016/11/finding-beautiful-yelp-photos-using-deep-learning.html)[[note](/notes/Finding_Beautiful_Yelp_Photos_Using_Deep_Learning.md)]
 * [Thoughts on Machine Learning – Dealing with Skewed Classes](https://florianhartl.com/thoughts-on-machine-learning-dealing-with-skewed-classes.html)
-* [Class Imbalance Problem](http://www.chioka.in/class-imbalance-problem/) [[note](notes/Class_Imbalance_problem.md)]
+* [Class Imbalance Problem](http://www.chioka.in/class-imbalance-problem/)[[note](notes/Class_Imbalance_problem.md)]
 
 
 
