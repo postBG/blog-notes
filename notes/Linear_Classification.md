@@ -59,7 +59,7 @@ SVM loss는 간단히 말하면 정답인 class의 score가 정답이 아닌 cla
 
 좀 더 자세히 알아보도록 하자. i번째 데이터를 $$x_i$$와 $$y_i$$라고 하자. 이때 score function으로 구한 score vector를 $$s$$라고 하고 j번째 클래스의 score는 $$s_j$$라고 하자. 즉, $$s_j=f(x_i, W)_j$$이다. 그러면 i번째 데이터에 대한 SVM loss는 다음과 같이 정의된다.
 
-SVM loss 중 hinge loss: $$Li=∑_{j≠yi}max(0,s_j−s_{y_i}+Δ)$$
+> SVM loss 중 hinge loss: $$Li=∑_{j≠yi}max(0,s_j−s_{y_i}+Δ)$$
 
 
 
@@ -110,12 +110,96 @@ Regularization을 사용하면 부가적으로 아래와 같은 특징이 생긴
 #### Practical Consideration
 
 1. **Setting Delta**
+   결론적으로 말하자면 $$Δ$$는 그냥 1.0으로 두고, $$λ$$ 만 테스트 해보면 된다. 왜냐하면, $$Δ$$와 $$λ$$는 서로 독립적으로 보이지만 사실은 trade-off관계에 있기 때문. 즉, data loss와 regularization loss사이에는 trade off가 있기 때문에 하나는 고정해두고($$Δ$$), 나머지 하나만 조절하면 된다($$λ$$). 둘 사이의 trade-off 관계를 이해하려면 $$W$$를 생각해보면 된다. $$λ$$를 줄이면 $$W$$의 크기가 커지므로, $$W$$는 score에 영향을 미치며, score 차이가 커지게 되므로 $$Δ$$ 는 커져야한다.
+2. **Relation to Binary SVM**
+   당연하게도 그냥 Binary SVM은 우리가 논의한 것의 특수형이다.
+3. **Aside: Optimization in primal**
+   그냥 kernel이나 max함수 같은 것을 사용해서 미분불가능하다고 슬퍼하지 말 것. subgradient를 사용하는 경우는 허다하다.
+4. **Aside: Other Multiclass SVM formulations**
+   다른 형태(예를 들면, One-vs-All)의 SVM formulation이 많이 있다는 것도 알아두자.
 
 
 
 
+#### 2. Cross-entropy loss
+
+#### Softmax Classifier
+
+Cross entropy loss는 Softmax Classifier에서 사용된다. Softmax Classifier는 위에서 본 SVM이 output을 score로 다뤘던 것과는 달리 output은 normalized class probabilities로 해석한다. 
+
+즉, 우리가 지금까지 $$ f(x_i, W) = Wx_i$$라는 식은 변함이 없지만, Softmax Classifier는 이를 unnormalized log probability로 해석한다. 또한 여기서는 *hinge loss*대신 **cross-entropy loss**를 사용하게 된다.
 
 
 
+> $$L_i=−log(e^{f_{y_i}} / ∑_je^{f_j})$$  or equivalently $$L_i=−f_{y_i}+log∑_je^{f_j}$$
+> $$f_j$$는 score vector $$f$$의 i번째 element를 뜻한다.
+
+
+
+전체 loss는 $$L_i$$를 평균내고 $$R(W)$$와 합쳐주면 된다.
+
+**softmax function**은 아래와 같다.
+
+> $$f_j(z) = e^{f_j} / ∑_ke^{j_k}$$
+
+이 함수는 실수 벡터 $$z$$를 입력받아 각 element가 0~1사이의 값을 가지고, 전체 element의 합이 1이 되는 벡터로 변환한다.
+
+
+
+#### Interpretation of Cross-entropy loss
+
+cross-entropy loss를 해석하는 방법 중 다음 2가지를 소개한다.
+
+#### 1. Information theory view
+
+"true" distirbution $$p$$와 estimated distribution $$q$$ 사이의 cross-entropy의 정의는 다음과 같다.
+
+> $$H(p, q) = - ∑_x p(x) log q(x)$$
+
+따라서 위에서 본 cross-entropy loss는 이 관점에서 우리가 예측한 class의 distribution과 실제 class들의 distribution의 cross-entropy와 같고, 이것을 줄이는 것이 우리의 목적이다.
+
+또 위의 식은 Kullback-Leibler divergence를 이용하여 아래와 같이 표시되는데,
+
+> $$H(p,q)=H(p)+D_{KL}(p||q)$$
+
+이 또한 두 distribution 사이의 차이를 줄여야하는 것을 의미한다.
+
+
+
+#### 2. Probabilistic interpretation
+
+앞에서 score vector를 unnormalized log probability로 본다고 했었는데 그렇기 때문에 아래의 식이 성립한다.
+
+> $$P(y_i∣x_i;W) = e^{f_{y_i}} / ∑_je^{f_j}$$
+
+이 관점에서 본다면 우리가 cross-entropy loss를 낮추는 것은 correct class의 negative log likelihood를 낮추는 것과 같다. 즉, 이는 *Maximul Likelihood Estimation(MLE)*를 하는 것과 같다.
+
+
+
+#### Practical Issue: Numerical stability
+
+cross-entropy 혹은 softmax 함수를 이용할 때, exponential을 사용하므로 값이 커지면서 수치적으로 불안정해질 수 있다. 따라서 다음의 관계식을 이용하여 수치안정성을 보장하는 방법이 사용된다.
+
+> $$e^{f_{y_i}} / ∑_je^{f_j} = Ce^{f_{y_i}} / C∑_je^{f_j} =e^{f_{y_i} + logC} / ∑_je^{f_j + logC}$$
+
+이때 C는 주로 $$logC = -max_jf_j$$로 선택한다.
+
+
+
+### SVM vs. Softmax
+
+![svm_softmax](assets/Linear_Classification/svm_softmax.PNG)
+
+**In practice, SVM and Softmax are usually comparable**
+
+SVM과 Softmax의 성능은 사실 큰 차이가 없지만, SVM이 좀 더 *local*한 objective이다. 아래의 예를 보자.
+
+만일, $$Δ$$ = 1.0이고 label = 0이 correct label이라고 하자.
+
+SVM은 score vector가 [10, -100, -100]이거나 [10, 9, 9]거나 별 신경쓰지 않는다. 즉, 두 벡터의 penalty는 0으로 같다.
+
+반면 Softmax의 경우, [10, 9, 9]가 훨씬 큰 penalty를 받는다. 
+
+다시 말해, Softmax Classifier는 자신의 score vector에 결코 만족하지 않지만, SVM은 margin만 확보한다면 불만을 가지지 않는다.
 
 
