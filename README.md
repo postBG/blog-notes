@@ -28,6 +28,7 @@
 * [(CS231n) Image Classification](http://cs231n.github.io/classification/)
 * [(CS231n) Linear Classification](http://cs231n.github.io/linear-classify/)[[note](notes/Linear_Classification.md)]
 * [Deep Learning Glossary](http://www.wildml.com/deep-learning-glossary/)
+* [(CS231n) Optimization](http://cs231n.github.io/optimization-1/)
 
 
 
