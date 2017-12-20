@@ -30,6 +30,7 @@
 * [Deep Learning Glossary](http://www.wildml.com/deep-learning-glossary/)
 * [(CS231n) Optimization](http://cs231n.github.io/optimization-1/)
 * [(CS231n) Backpropagation](http://cs231n.github.io/optimization-2/)
+* [(CS231n) Backpropagation for a Linear Layer](http://cs231n.stanford.edu/handouts/linear-backprop.pdf)
 
 
 
