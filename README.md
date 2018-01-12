@@ -21,6 +21,14 @@
 
 
 
+### 2018 Jan.
+
+* [(CS231n) Neural Network 1](http://cs231n.github.io/neural-networks-1/)
+* [Getting started with page object pattern for your selenium tests](https://www.pluralsight.com/guides/software-engineering-best-practices/getting-started-with-page-object-pattern-for-your-selenium-tests)
+
+
+
+
 ### 2017 Dec.
 
 * [Recurrent Models of Visual Attention (NIPS 2014)](http://sanghyukchun.github.io/91/)
