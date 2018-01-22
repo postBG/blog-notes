@@ -17,6 +17,9 @@
   * [React Best Practices and Useful Functions](https://medium.com/@nesbtesh/react-best-practices-a76fd0fbef21)
 * Get that Job
   * [Get that job at google](http://steve-yegge.blogspot.kr/2008/03/get-that-job-at-google.html)
+* VCS
+  * [Github flow](https://guides.github.com/introduction/flow/)
+  * [How to Write a Git Commit Message](https://item4.github.io/2016-11-01/How-to-Write-a-Git-Commit-Message/)
 
 
 
@@ -25,6 +28,8 @@
 
 * [(CS231n) Neural Network 1](http://cs231n.github.io/neural-networks-1/)
 * [Getting started with page object pattern for your selenium tests](https://www.pluralsight.com/guides/software-engineering-best-practices/getting-started-with-page-object-pattern-for-your-selenium-tests)
+* [(CS231n) Neural Network 2](http://cs231n.github.io/neural-networks-2/)
+* [Git을 이용하여 텔레파시 통하는 팀 만들기](http://story.haezoom.com/?p=936)
 
 
 
