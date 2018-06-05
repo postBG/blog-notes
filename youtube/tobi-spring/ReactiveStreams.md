@@ -4,7 +4,7 @@
 궁극적인 기능은 똑같은데, 표현이 반대인 것.
 ex) Data method(void) <---> void method(Data)
 
-### Iterable
+### Iterable & Observer Pattern
 * Iterable interface를 구현하며 for-each문을 사용할 수 있게 된다.
 * interface의 구현해야할 함수가 하나뿐이라면 Java, kotlin은 lambda로 변환가능.
 * Iterable -> iterator() 라는 Iterator를 반환하는 함수를 구현해야하며, Iterator는 hasNext, next만을 가진다.
@@ -26,7 +26,15 @@ ExecutorService es = Executors.newSingleThreadExecutor();
 es.execute(io);
 es.shutDown();
 ```
-
-## Observer Pattern
+* MS 쿨가이들이 지적한 옵저버 패턴의 문제점
+  1. Complete라는 개념이 존재하지 않는다.
+  2. Error 혹은 Exception이 발생한 경우 -> 서로 다른 스레드에서 돌아가는 옵저버들간의 에러 전파 등을 제어하기 어렵다.
 
 ## Reactive Streams의 핵심 인터페이스
+[Specification](https://github.com/reactive-streams/reactive-streams-jvm/blob/v1.0.2/README.md#specification)
+
+* 네가지의 인터페이스:
+  1. Processor
+  2. Publisher
+  3. Subscriber
+  4. Subscription
