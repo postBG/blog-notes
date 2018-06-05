@@ -38,3 +38,5 @@ es.shutDown();
   2. Publisher
   3. Subscriber
   4. Subscription
+* Subscription은 Publisher와 Subscriber사이를 중개 (back pressure)
+  * Back pressure의 필요성: Publisher는 publish하는 속도가 아주 빠르고, Subscriber는 처리 속도가 느리면, Subscribe할 때 정책(예를 들면, 난 일단 1개만 주고 그 다음은 대기해)을 정해주는 것이 좋다.
