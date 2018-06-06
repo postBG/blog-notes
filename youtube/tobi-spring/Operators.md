@@ -51,3 +51,39 @@ ex)
     }
   }
   ```
+  
+  2. reduce
+   ```java
+   private static Publisher<Integer> createReducePub(Publisher<Integer> upstreamPub, final int initValue, final BiFunction<Integer, Integer, Integer> bf) {
+    return new Publisher<Integer>() {
+      @Override
+      public void subscribe(Subscriber<? super Integer> sub) {
+        upstreamPub.subscribe(new Subscriber<Integer>() {
+          int result = initValue;      
+  
+          @Override
+          public void onSubscribe(Subscription subsription) {
+            // upstream Publisher에게 받은 Subscription을 전달만해주면 됨
+            sub.onSubscribe(subsription);
+          }
+          
+          @Override
+          public void onNext(Integer i) {
+            result = bf.apply(result, i);
+          }
+          
+          @Override
+          public void onError(Throwable t) {
+            sub.onError(t);
+          }
+          
+          @Override
+          public void onComplete() {
+            sub.onNext(result);
+            sub.onComplete();
+          }
+        });
+      }
+    }
+  }
+   ```
