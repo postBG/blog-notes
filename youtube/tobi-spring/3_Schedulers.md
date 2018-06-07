@@ -86,3 +86,8 @@ Flux.range(1, 10)
 System.out.println("exit") // 이게 가장 먼저 출력되고, sub-1 thread가 1, 2, ...을 만들어냄
 ```
 
+## JVM의 스레드
+* User Thread
+  * User Thread가 살아있는 한, 메인 스레드가 끝나도 JVM은 종요되지 않는다.
+* Deamon Thread
+  * JVM은 데몬 스레드들만 살아있고, User 스레드는 하나도 남아있지 않는 경우, 그냥 데몬 스레드를 죽여버린다.
