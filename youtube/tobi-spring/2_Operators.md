@@ -89,3 +89,16 @@ ex)
     }
   }
    ```
+
+3. Spring Reactor Flux == Publisher
+ ```java
+ Flux.<Integer>.create(e -> {
+  e.next(1);
+  e.next(2);
+  e.next(3);
+  e.complete();
+ })
+ .map(x -> x * 10)
+ .reduce(0, (x1, x2) -> x1 + x2)
+ .subscribe(System.out::println);
+ ```
