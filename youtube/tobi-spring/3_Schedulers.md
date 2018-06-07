@@ -50,7 +50,8 @@ Publisher<Integer> pubOnSub = sub -> {
     
     @Override
     public void onSubscribe(Subscription s) {
-      sub.onSubscribe(s);
+        // 기존의 pub은 데이터를 빠르게 publish할 수 있으므로, 그 부분까지 main스레드가 처리하도록 하고, onNext, onError, onComplete은 별도의 스레드에서 동작하도록 변경
+      sub.onSubscribe(s); 
     }
     
     @Override
@@ -74,4 +75,14 @@ Publisher<Integer> pubOnSub = sub -> {
 pubOnSub.subscribe(sub);
 ```
 
+## Reactor - Flux's Scheduler
+
+```java
+Flux.range(1, 10)
+  .log()
+  .subscribeOn(Schedulers.newSingle("sub"))
+  .subscribe(System.out::println)
+  
+System.out.println("exit") // 이게 가장 먼저 출력되고, sub-1 thread가 1, 2, ...을 만들어냄
+```
 
