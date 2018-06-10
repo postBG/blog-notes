@@ -13,8 +13,33 @@ class MyController {
   AsyncRestTemplate rt = new AsyncRestTemplate(new Netty4ClientHttpRequestFactory(new NioEventLoopGroup(1)));
   
   @GetMapping("/rest")
-  public Listenable<ResponseEntity<String>> rest(@RequestParam int idx) {
+  public ListenableFuture<ResponseEntity<String>> rest(@RequestParam int idx) {
     return rt.getForEntity("http://somewhere.com/service?idx={idx}", String.class, idx);
   }
 }
 ```
+
+민약에 응답으로 받은 값을 가공하고 싶다면 `DeferredResult`를 사용하면 된다.
+```java
+@RestController
+class MyController {
+  AsyncRestTemplate rt = new AsyncRestTemplate(new Netty4ClientHttpRequestFactory(new NioEventLoopGroup(1)));
+  
+  @GetMapping("/rest")
+  public DeferredResult<String> rest(@RequestParam int idx) {
+    DeferredResult<String> dr = new DeferredResult<>();
+    ListenableFuture<ResponseEntity<String>> f = rt.getForEntity("http://somewhere.com/service?idx={idx}", String.class, idx);
+    
+    f.addCallback(responseEntity -> {
+      dr.setResult(responseEntity.getBody() + "!!!");
+    }, e -> {
+      dr.setErrorResult(e.getMessage());
+    });
+    
+    return dr;
+  }
+}
+```
+
+
+
