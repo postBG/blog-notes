@@ -24,6 +24,9 @@ public class MyController {
   private static final String URL1 = "http://localhost:8081/service1?req={req}";
   private static final String URL2 = "http://localhost:8081/service2?req={req}";
   
+  @Autowired
+  private MyService myService;
+  
   WebClient client = WebClient.create();
 
   @GetMapping("/rest") // 이 코드는 AsyncRestTemplate + DeferredResult처럼 비동기 논블로킹으로 동작한다.
@@ -34,9 +37,18 @@ public class MyController {
     Mono<String> body = res.flatMap(clientResponse -> clientResponse.bodyToMono(String.class)); // flapMap(f)의 f: x -> Mono<y>
     return body
             .flatMap(body -> client.get().uri(URL2, body).exchange()) // 앞에서 받은 값을 이용해서 다음 request를 보내보자
-            .flatMap(clientResponse -> clientResponse.bodyToMono(String.class));
+            .flatMap(clientResponse -> clientResponse.bodyToMono(String.class)); // Mono<String>
+            .flatMap(body -> Mono.fromCompletionStage(myService.work(body))); // Mono<String>
   }
-} 
+}
+
+@Service
+class MyService {
+  @Async // 시간이 오래걸리는 작업이라면, 위의 컨트롤러의 Netty worker thread를 묶고 있을 수 있다. 따라서 별개의 스레드에서 동작하도록 수정.
+  public CompletableFuture<String> work(String req){ 
+    return CompletableFuture.completedFuture(req + "/work");
+  }
+}
 ```
 
 #### 참고
