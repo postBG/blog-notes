@@ -20,7 +20,7 @@ Stop-the-world란 GC를 하는 시점에, GC를 수행하는 스레드를 제외
   2. 오래된 객체에서 젋은 객체로의 참조는 매우 적게 존재한다.
       * 직관적으로 이미 만든 객체의 속성에 새로 만든 객체를 넣는 경우(setter를 사용하는 경우)는 별로 없다는 의미
 
-**HotSpot VM의 2개의 물리적 공간**
+**HotSpot VM의 Heap의 2개의 물리적 공간**
   1. Young Generation 영역
       * 객체가 새롭게 생성되면 이곳의 메모리를 할당 받게 된다.
       * 대부분의 객체는 금방 unreachable해지기 때문에, 많은 객체가 이곳에 생성되었다가 사라진다.
@@ -62,4 +62,61 @@ Stop-the-world란 GC를 하는 시점에, GC를 수행하는 스레드를 제외
     * 간단한 방식인데, 그냥 Thread 마다 Eden 영역의 일정 범위를 할당하는 것이다.
     * 이렇게 하면 서로 간섭을 일으키지 않으면서 bump-the-pointer를 사용할 수 있다.
   
+## Old 영역에서의 GC
+
+앞에서 서술하였듯이 Old 영역에서의 GC는 Old 영역이 가득차면 발생한다. 
+Full GC는 여러가지 방식이 존재하며, 각 방식마다 동작 방식이 다르다.
+JDK7기준으로는 아래의 5가지 방식이 존재한다.
+1. ~~Serial GC~~ (CPU 코어가 1개일 때를 대비하여 만든 것이므로 사용하면 좋지 않다.)
+2. Parallel GC
+3. Parallel Old GC(Parallel Compacting GC)
+4. Concurrent Mark & Sweep GC(이하 CMS)
+5. G1(Garbage First) GC
+
+### Serial GC
+**mark-sweep-compact**라는 알고리즘을 사용하며 아래와 같이 동작한다.
+1. Old 영역에서 아직 참조되고 있는 객체들을 식별한다. (Mark)
+2. heap 영역의 앞부분부터 아직 참조되고 있는 객체만 남긴다. (Sweep)
+3. 남은 객체들을 앞쪽으로 밀어 압축한다. (Compact)
+
+Compact 과정이 있는 과정은 당연히 메모리 단편화(외부단편화를 방지하기 위한 것은 확실한데, 내부 단편화는 모르겠다.)를 해결하기 위한 것으로 보인다.
+이 과정이 없다면, GC가 더 많이 발생해 stop-the-world시간이 길어질 것이다.
+
+### Parallel GC (= Throughput GC)
+Serial GC의 다중 스레드 버전.
+이 GC 방식은 메모리와 코어의 수가 충분할 때 유리하다.
+
+![](https://d2.naver.com/content/images/2015/06/helloworld-1329-4.png)
+
+### Parallel Old GC
+이 방식은 **mark-summary-compaction** 단계를 거쳐 GC를 수행한다.
+summary 부분이 더 효율적으로 개선된 것인 것 같은데, 
+예를 들면, 여러 개의 스레드가 Old 영역을 분할해서 읽는다던가 하는 방식으로 말이다.
+
+### CMS GC (= Low Latency GC)
+![](https://d2.naver.com/content/images/2015/06/helloworld-1329-5.png)
+위의 사진은 Serial GC와 CMS GC의 차이를 설명한 사진인데, 다음과 같은 방식으로 동작한다.
+
+1. initial Mark 단계
+    * 2번의 stop-the-world 중 첫번째가 발생하는 단계
+    * Class Loader에서 가장 가까운 객체 중 살아있는 객체를 찾는 것으로 끝이난다.
+    * 이렇기 때문에 stop-the-world 시간이 매우 짧은 편이다.
+    * 뜬금없는 ClassLoader의 등장에 당황해서 찾아보니, 내가 아는 그 ClassLoader가 맞고, 여기서 말하는 것은 ClassLoader객체를 말하는 듯. 
+2. Concurrent Mark 단계
+    * 방금 단계에서 살아있다고 확인한 객체에서 참조하고 있는 객체들을 stop-the-world를 발생시키지 않고 Mark
+3. Remark 단계
+    * 두번째 stop-the-world가 발생하는 단계
+    * Concurrent Mark 단계에서 Mark한 객체들 중 추가로 참조가 끊어진 객체들을 Remark
+4. Concurrent Sweep 단계
+    * sweep을 하는데, stop-the-world를 발생시키지 않고 수행한다.
+    
+그런데, 더 많은 메모리와 CPU를 사용하고, Compaction 단계를 수행하지 않으므로 신중하게 사용해야한다.
+
+### G1 GC (Garbage First GC)
+![](https://d2.naver.com/content/images/2015/06/helloworld-1329-6.png)
+
+일단 Young / Old 방식으로 힙을 나누지 않는다.
+메모리를 그림과 같이 그리드 형식으로 나눠서, 공간이 충분하면 객체를 할당하고,
+한 영역이 가득차면 그 영역에 대한 GC를 수행하는 방식이다.
+JDK9부터는 이 GC가 default GC가 되어버렸다.
 
