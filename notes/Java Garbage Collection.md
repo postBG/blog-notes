@@ -16,9 +16,21 @@ Stop-the-world란 GC를 하는 시점에, GC를 수행하는 스레드를 제외
 ## GC를 지탱하는 2가지 전제 (Weak Generational Hypothesis)
 **Weak Generational Hypothesis**
   1. 대부분의 객체는 금방 unreachable해진다.
+      * scope만 생각해봐도 해당 scope를 벗어난 객체는 금방 unreachable해진다.
   2. 오래된 객체에서 젋은 객체로의 참조는 매우 적게 존재한다.
       * 직관적으로 이미 만든 객체의 속성에 새로 만든 객체를 넣는 경우(setter를 사용하는 경우)는 별로 없다는 의미
 
+**HotSpot VM의 2개의 물리적 공간**
+  1. Young Generation 영역
+      * 객체가 새롭게 생성되면 이곳의 메모리를 할당 받게 된다.
+      * 대부분의 객체는 금방 unreachable해지기 때문에, 많은 객체가 이곳에 생성되었다가 사라진다.
+      * 이 영역에서 Garbage들이 사라지면, Minor GC라고 한다.
+  2. Old Generation 영역
+      * Young 영역에서 오랫동안 살아남은 객체들은 Old 영역으로 promotion된다.
+      * 대부분 Young 영역보다 큰 메모리를 할당하며, 따라서 GC의 발생횟수는 더 적다. (GC는 해당 영역에 공간이 부족해지면 일어나므로)
+      * 여기서 garbage들이 정리될 때, 이를 Major GC라고 한다.
+
+![](https://d2.naver.com/content/images/2015/06/helloworld-1329-1.png)
 
 ## Young 영역의 구성
 ### Young 영역은 3개의 영역으로 다시 구분된다
